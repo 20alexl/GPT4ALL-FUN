@@ -2,9 +2,11 @@ import sys
 from gpt4all import GPT4All as gp
 from rich import print
 
+model_name = "gpt4all-13b-snoozy-q4_0.gguf"
+
 # Define the valid arguments and their defaults
 valid_args = {
-    '--max_tokens': 5000,
+    '--max_tokens': 500,
     '--temp': 0.15,
     '--top_k': 40,
     '--top_p': 0.4,
@@ -61,7 +63,7 @@ print(model_args)
 print("[red]CTRL+C to Exit[/red]")
 
 def main(model_args):
-    model = gp("gpt4all-13b-snoozy-q4_0.gguf", device=model_device)
+    model = gp(model_name, device=model_device)
 
     with model.chat_session():
         while True:
@@ -79,7 +81,7 @@ def main(model_args):
 
                 generate_args = {
                     'prompt': prompt,
-                    'max_tokens': model_args.get('max_tokens', 5000),
+                    'max_tokens': model_args.get('max_tokens', 500),
                     'temp': model_args.get('temp', 0.15),
                     'top_k': model_args.get('top_k', 40),
                     'top_p': model_args.get('top_p', 0.4),
