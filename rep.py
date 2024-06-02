@@ -6,7 +6,7 @@ model_name = "gpt4all-13b-snoozy-q4_0.gguf"
 
 # Define the valid arguments and their defaults
 valid_args = {
-    '--max_tokens': 500,
+    '--max_tokens': 5000,
     '--temp': 0.15,
     '--top_k': 40,
     '--top_p': 0.4,
@@ -81,7 +81,7 @@ def main(model_args):
 
                 generate_args = {
                     'prompt': prompt,
-                    'max_tokens': model_args.get('max_tokens', 500),
+                    'max_tokens': model_args.get('max_tokens', 5000),
                     'temp': model_args.get('temp', 0.15),
                     'top_k': model_args.get('top_k', 40),
                     'top_p': model_args.get('top_p', 0.4),
