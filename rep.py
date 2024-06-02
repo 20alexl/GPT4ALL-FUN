@@ -2,7 +2,7 @@ import sys
 from gpt4all import GPT4All as gp
 from rich import print
 
-model_name = "gpt4all-13b-snoozy-q4_0.gguf"
+model_name = "wizardlm-13b-v1.2.Q4_0.gguf"
 
 # Define the valid arguments and their defaults
 valid_args = {
@@ -77,7 +77,7 @@ def main(model_args):
                         break
                     prompt_lines.append(line)
 
-                prompt = '\n'.join(prompt_lines)
+                prompt = ' '.join(prompt_lines)
 
                 generate_args = {
                     'prompt': prompt,
